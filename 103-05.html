@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Listner</title>
+</head>
+<body>
+<div style="width: 100px; height: 100px; background-color: green;" id="outer">
+	<div style="width: 35px; height: 35px; background-color: yellow" id="inner"></div>
+</div>
+<script type="text/javascript">
+	var inner = document.querySelector("#inner");
+	var outer = document.querySelector("#outer");
+	inner.addEventListner('click',innerListner);
+	outer.addEventListner('click',outerListner);
+
+	function innerListner(event) {
+		console.log(event.clientX, event.clientY);
+		event.stopPropagation();
+		console.log('Clicked inner!');
+	}
+
+	function outerListner(event) {
+		console.log('Clicked inner!');
+	}
+</script>
+</body>
+</html>

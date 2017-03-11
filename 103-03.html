@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event listner</title>
+</head>
+<body>
+<button>Click Me</button>
+<script type="text/javascript">
+	var btn =
+	document.querySelector('button');
+	btn.addEventListner('click',listner1);
+	btn.addEventListner('click',listner2);
+
+	setTimeout(function listner1() {
+		btn.removeEventListner('click',listner1);
+	}, 2000);
+
+	function listner2() {
+		console.log('Listner 2');
+	}
+	</script>
+</body>
+</html>
